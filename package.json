@@ -1,0 +1,19 @@
+{
+  "name": "m-utils",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ma125120/m-utils.git"
+  },
+  "scripts": {
+    "build": "npx tsc -p .",
+    "test": "npx jest"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "typescript": "^3.5.3"
+  }
+}
