@@ -1,8 +1,10 @@
 {
-  "name": "m-utils",
+  "name": "mts-util",
   "version": "0.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "description": "typescript, fp",
+  "author": "马鹏达",
   "license": "MIT",
   "repository": {
     "type": "git",
