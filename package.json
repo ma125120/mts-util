@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ma125120/m-utils.git"
+    "url": "git@github.com:ma125120/mts-util.git"
   },
   "scripts": {
     "build": "npx tsc -p .",
