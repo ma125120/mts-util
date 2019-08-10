@@ -1,4 +1,4 @@
-## ts的函数式编程
+## ts的函数式编程 [![Build Status](https://travis-ci.org/ma125120/mts-util.svg?branch=master)](https://travis-ci.org/ma125120/mts-util)
 
 - compose
 - curry
