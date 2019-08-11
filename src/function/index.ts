@@ -1,14 +1,34 @@
-export function curry(fn: Function, arity = fn.length): any {
-  return _curry(fn, arity);
+
+export const _ = Symbol();
+
+export const curry = (fn: Function, arity = fn.length): (...args: any[]) => any => {
+  let prev: [] = [];
+  return function _curry(...args: []) {
+    const len = getArgLen(prev, args);
+    prev = replaceParams(prev, args);
+    if (len < arity) {
+      return _curry;
+    } else {
+      return fn(...prev)
+    }
+  }
 }
 
-const _curry = function _curry(fn: Function, arity = fn.length, ...args: any[]): any {
-  const argLen = args.length;
-  if (argLen < arity) {
-    return _curry.bind(null, fn, arity, ...args);
-  } else {
-    return fn(...args);
-  }
+function getArgLen(prev: [], next: [] = []): number {
+  return [...prev, ...next].filter(v => v !== _).length;
+}
+
+function replaceParams(prev: [] = [], next: [] = []): [] {
+  const arr = [...next];
+  const old = prev.map(v => {
+    let item: any = v;
+    if (arr.length > 0 && v === _) {
+      item = arr.shift();
+    }
+    return item;
+  });
+
+  return [...old, ...arr] as []
 }
 
 export function compose<T>(...funcs: Function[]): (args: any) => T {
